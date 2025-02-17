@@ -22,7 +22,7 @@ function Cadastro(){
   
       verificacaoCadastro(nome, email, senha);
   
-      
+      // Limpando os inputs após o cadastro
       setNome('');
       setEmail('');
       setSenha('');
