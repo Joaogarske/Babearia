@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { StyleSheet, View,Button,TextInput,ImageBackground,Image } from 'react-native';
 import { useState } from 'react';
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     marginBottom: 5, 
   }
 });
-=======
+
 import React from "react";
 import Rotes from "./rotas";
  function App() {
@@ -77,6 +77,6 @@ import Rotes from "./rotas";
   );
 }
 
->>>>>>> joao
+
 
 export default App;
