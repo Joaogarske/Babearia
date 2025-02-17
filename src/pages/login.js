@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-import { StyleSheet, View,Button,TextInput,ImageBackground,Image } from 'react-native';
+import { StyleSheet, View,Button,TextInput,ImageBackground,Image,TouchableOpacity,Text } from 'react-native';
 import { useState } from 'react';
 
 
- function App() {
+ function Login({navigation}) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -14,20 +13,27 @@ import { useState } from 'react';
      }
      alert(`seu email: ${email}, sua Senha: ${senha}`)
   }
+
+  function irParaCadastro(){
+     navigation.navigate('Cadastro')
+  }
   return (
      <ImageBackground
-     source={require('./assets/background.jpg')}
+     source={require('../../assets/background.jpg')}
      resizeMode='cover'
      style={styles.background}
      >
     <View style={styles.container}>
-    <Image source={require('./assets/logo.png')} style={styles.logo} />
+    <Image source={require('../../assets/logo.png')} style={styles.logo} />
       
       <TextInput style={styles.input}  placeholder='E-mail' onChangeText={(e)=> setEmail(e)}/>
       <TextInput style={styles.input}  placeholder='Senha'  onChangeText={(e)=> setSenha(e)} secureTextEntry={true}/>
       <View style={styles.btnContainer}>
         <Button title="LOGAR" onPress={mostrarDados} color="black"/>
       </View>
+      <TouchableOpacity onPress={irParaCadastro}>
+          <Text style={styles.link}>Cadastre-se</Text>
+       </TouchableOpacity>
     </View>
     </ImageBackground>
 
@@ -39,7 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 300,
+    height: 350,
     width: 320,
     borderRadius: 5
   },
@@ -66,17 +72,12 @@ const styles = StyleSheet.create({
     width: 100, 
     height: 100,
     marginBottom: 5, 
+  },
+  link: {
+    marginTop: 10,
+    color: 'blue',
+    textDecorationLine: 'underline',
   }
 });
-=======
-import React from "react";
-import Rotes from "./rotas";
- function App() {
-  return (
-    <Rotes/>    
-  );
-}
 
->>>>>>> joao
-
-export default App;
+export default Login;
